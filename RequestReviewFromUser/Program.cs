@@ -39,7 +39,7 @@ static async Task RequestReviewFromUser(ActionInputs inputs)
     GitHubClient ghclient = new GitHubClient(new ProductHeaderValue("RequestReviewFromUser"));
     ghclient.Credentials = new Credentials(inputs.token);
 
-    if (inputs.ignoreRemovedUsers)
+    if (inputs.ignoreRemovedUsers ?? false)
     {
         timeline = await ghclient.Issue.Timeline.GetAllForIssue(inputs.Owner, inputs.Name, inputs.ID).WaitAsync(TimeSpan.FromSeconds(10));
     }

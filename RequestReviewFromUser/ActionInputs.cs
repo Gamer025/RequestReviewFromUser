@@ -49,7 +49,7 @@ namespace RequestReviewFromUser
         [Option('r', "ignoreRemovedUsers",
            Required = false,
            HelpText = "Don't request review from users that got got previously removed as reviewer for the PR.")]
-        public bool ignoreRemovedUsers { get; set; } = false;
+        public bool? ignoreRemovedUsers { get; set; } = false;
 
         static void ParseAndAssign(string? value, Action<string> assign)
         {
