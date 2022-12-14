@@ -36,7 +36,6 @@ inputs:
     description:
       "Don't request review from users that got got previously removed as reviewer for the PR."
     required: false
-    default: "false"
  
 runs:
   using: 'docker'
